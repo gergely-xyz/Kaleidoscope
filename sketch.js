@@ -33,7 +33,7 @@ class Blob{
 
 var cnv;
 
-var blobs = [new Blob(), new Blob(), new Blob(), new Blob(), new Blob(), new Blob(), new Blob(), new Blob()];
+var blobs = [];
 
 var myX = 0;
 var myY = 0;
@@ -53,6 +53,12 @@ var myblue = 0;
 var blueshift = 1;
 
 function setup() {
+
+    // Make 8 blobs
+    for (var i=0; i<8; i++){
+        blobs.push(new Blob());
+    }
+
     // Make canvas in the center of the window
     cnv = createCanvas(canvasSize(), canvasSize());
     centerCanvas()
