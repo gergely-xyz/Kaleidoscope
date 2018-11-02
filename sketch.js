@@ -31,6 +31,8 @@ class Blob{
     }
 }
 
+var cnv;
+
 var blobs = [new Blob(), new Blob(), new Blob(), new Blob(), new Blob(), new Blob(), new Blob(), new Blob()];
 
 var myX = 0;
@@ -56,13 +58,10 @@ function setup() {
     myY = height/2;
 
     // Make canvas in the center of the window
-    var cnv = createCanvas(800,800);
-    var x = (windowWidth - width) / 2;
-    var y = (windowHeight - height) / 2;
-    cnv.position(x, y);
+    cnv = createCanvas(canvasSize(), canvasSize());
+    centerCanvas()
 
     noStroke();
-    background(0);
 }
 
 
@@ -114,4 +113,17 @@ function draw() {
     }
 
     
+}
+
+function windowResized(){
+    resizeCanvas(canvasSize(), canvasSize());
+    centerCanvas();
+}
+
+function centerCanvas(){
+    cnv.position((windowWidth - width) / 2, (windowHeight - height) / 2);
+}
+
+function canvasSize(){
+    return min(windowWidth, windowHeight);
 }
