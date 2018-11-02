@@ -53,9 +53,9 @@ var myblue = 0;
 var blueshift = 1;
 
 function setup() {
-    // Begin drawing in the center
-    myX = width/2;
-    myY = height/2;
+    // Begin drawing in a random spot
+    myX = round(random(0, canvasSize()));
+    myY = round(random(0, canvasSize()));
 
     // Make canvas in the center of the window
     cnv = createCanvas(canvasSize(), canvasSize());
